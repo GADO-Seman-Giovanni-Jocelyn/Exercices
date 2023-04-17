@@ -1,0 +1,71 @@
+---
+name: GADO
+surname: Seman Giovanni Jocelyn
+position: "Student"
+pronouns: he/his
+address: "Niarry Tally, Grand Dakar"
+phone: +221 77 482 30 05
+email: "gadogiovanni3@gmail.com"
+github: koudgado
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  vitae::awesomecv:
+    page_total: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Some stuff about me
+
+ * I am found of reading books.
+ * I was a professional football player
+ * I was the previous CEO of SAMSUNG.
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "EPL Village Enchanté", "2006-2012", "Primary School", "Lomé,Togo",
+  "Collège Protestant", "2013-2017", "College", "Lomé & Kpalimé,Togo",
+  "Lycée Scientifique de Lomé", "2017-2020", "High school", "Lomé,Togo",
+  "ENSAE", "2021-2026", "Graduate studies", "Dakar, Sénégal"
+) %>%
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Prizes
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  2032, "Managment", "CEO of the year",
+  2038, "Managment", "CEO of the year"
+) %>%
+  brief_entries(
+    glue::glue("Nobel Prize in {Type}"),
+    Year,
+    Desc
+  )
+```
+
+# Publications
+
+```{r}
+"1. Art of managment"
+"2. How to manage people"
+```
+
+
+
+
+
+
+
+
+
+
